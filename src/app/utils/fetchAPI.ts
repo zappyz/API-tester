@@ -71,7 +71,7 @@ export async function fetchAPI(options: ApiRequestOptions): Promise<ApiResponse>
         method,
         headers,
         body: requestBody,
-        signal: controller.signal,
+        signal: controller.signal ?? controller.signal,
       });
 
       clearTimeout(timeoutId);

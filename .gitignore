@@ -42,3 +42,18 @@ next-env.d.ts
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# Additions for Docker
+/postgres_data/
+
+# Additions for Prisma
+/prisma/dev.db
+/prisma/migrations/
+.prisma/
+
+# Additions for Docker Compose logs
+docker-compose.override.yml
+docker-compose*.log
+
+# Optional: VS Code
+.vscode/
