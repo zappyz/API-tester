@@ -3,19 +3,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Role {
-  admin
-  user
+generator client {
+  provider = "prisma-client-js"
 }
 
 model User {
-  id            String   @id @default(uuid())
-  email         String   @unique
-  name          String
-  role          Role     
-  requestLimit  Int      @default(10)
-  requestsMade  Int      @default(0)
+  id           String   @id @default(uuid())
+  email        String   @unique
+  name         String
+  role         String
+  requestLimit Int      @default(10)
+  requestsMade Int      @default(0)
   lastRequestAt DateTime?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
