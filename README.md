@@ -51,5 +51,7 @@ npm run db:reset
 
 ## Additional Notes
 Make sure Docker is installed and running before starting the PostgreSQL container.
+
 The migrations are committed in the repo; no need to create migrations unless you change the schema.
-Use npx prisma migrate dev only when you are developing and changing the Prisma schema.
+
+Use ```bash npx prisma migrate dev``` only when you are developing and changing the Prisma schema.
