@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts",
+    "seed": "ts-node prisma/seed.ts",
     "lint": "next lint",
     "db:init": "npx prisma migrate deploy && npx prisma generate && npm run seed",
     "db:reset": "npx prisma migrate reset --force && npm run db:init"
