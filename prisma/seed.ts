@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+
 const prisma = new PrismaClient();
 
 async function main() {
@@ -21,7 +22,7 @@ async function main() {
     create: {
       email: 'user@example.com',
       name: 'Regular User',
-      role: 'user',
+      role: 'user', 
       requestLimit: 10,
     },
   });
@@ -32,9 +33,9 @@ main()
     console.log('Seeding complete.');
   })
   .catch((e) => {
-    console.error(e);
+    console.error('Seeding failed:', e);
     process.exit(1);
   })
-  .finally(() => {
-    prisma.$disconnect();
+  .finally(async () => {
+    await prisma.$disconnect();
   });
