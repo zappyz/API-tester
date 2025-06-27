@@ -9,8 +9,8 @@ A Next.js project to test APIs with user-based request limits and an admin dashb
 ### 1. Clone the project
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/api-tester.git
-cd api-tester
+git clone https://github.com/zappyz/Zapman.git
+cd Zapman
 
 ```
 
