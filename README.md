@@ -9,8 +9,8 @@ A Next.js project to test APIs with user-based request limits and an admin dashb
 ### 1. Clone the project
 
 ```bash
-git clone https://github.com/zappyz/Zapman.git
-cd Zapman
+git clone https://github.com/YOUR_USERNAME/api-tester.git
+cd api-tester
 
 ```
 
@@ -35,7 +35,7 @@ DATABASE_URL="postgresql://postgres:postgres@localhost:5433/admin_dashboard"
 
 Run Prisma migrations:
 ```bash
-npx prisma migrate dev --name init
+npx prisma migrate dev
 npx prisma generate
 ```
 
@@ -53,4 +53,7 @@ Access the app at http://localhost:3000.
 ## Additional Notes
 Make sure Docker is installed and running before starting the PostgreSQL container.
 
-If you need to reset the database, you can stop the container and remove the volume at ./postgres_data/.
+If you ever need to reset the database, you can:
+```bash
+npx prisma migrate reset
+```
