@@ -32,16 +32,9 @@ Create a .env file with the following:
 ```env
 DATABASE_URL="postgresql://postgres:postgres@localhost:5433/admin_dashboard"
 ```
-
-Run Prisma migrations:
+### 5. Initialize the database
 ```bash
-npx prisma migrate dev
-npx prisma generate
-```
-
-### 5. Seed an admin user
-```bash
-npm run seed
+npm run db:init
 ```
 
 ### 6. Run the development server
@@ -50,10 +43,13 @@ npm run dev
 ```
 Access the app at http://localhost:3000.
 
+## Resetting the Database
+If you need to start fresh (drop all data and re-run migrations):
+```bash
+npm run db:reset
+```
+
 ## Additional Notes
 Make sure Docker is installed and running before starting the PostgreSQL container.
-
-If you ever need to reset the database, you can:
-```bash
-npx prisma migrate reset
-```
+The migrations are committed in the repo; no need to create migrations unless you change the schema.
+Use npx prisma migrate dev only when you are developing and changing the Prisma schema.
