@@ -48,8 +48,6 @@ next-env.d.ts
 
 # Additions for Prisma
 /prisma/dev.db
-/prisma/migrations/
-.prisma/
 
 # Additions for Docker Compose logs
 docker-compose.override.yml

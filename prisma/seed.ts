@@ -1,25 +1,40 @@
 import { PrismaClient } from '@prisma/client';
-
 const prisma = new PrismaClient();
 
 async function main() {
-  const admin = await prisma.user.upsert({
+  // create admin user
+  await prisma.user.upsert({
     where: { email: 'admin@example.com' },
     update: {},
     create: {
       email: 'admin@example.com',
-      name: 'Admin',
+      name: 'Admin User',
       role: 'admin',
-      requestLimit: 1000,
+      requestLimit: 100,
     },
   });
 
-  console.log('Admin user created:', admin);
+  // create normal user
+  await prisma.user.upsert({
+    where: { email: 'user@example.com' },
+    update: {},
+    create: {
+      email: 'user@example.com',
+      name: 'Regular User',
+      role: 'user',
+      requestLimit: 10,
+    },
+  });
 }
 
 main()
+  .then(() => {
+    console.log('Seeding complete.');
+  })
   .catch((e) => {
     console.error(e);
     process.exit(1);
   })
-  .finally(() => prisma.$disconnect());
+  .finally(() => {
+    prisma.$disconnect();
+  });

@@ -1,4 +1,4 @@
-# API Tester
+# Zapman Tester
 
 A Next.js project to test APIs with user-based request limits and an admin dashboard to manage usage.
 
@@ -50,3 +50,7 @@ npm run dev
 ```
 Access the app at http://localhost:3000.
 
+## Additional Notes
+Make sure Docker is installed and running before starting the PostgreSQL container.
+
+If you need to reset the database, you can stop the container and remove the volume at ./postgres_data/.
